@@ -1,0 +1,25 @@
+.login__header {
+    display: flex;
+    align-items: center;
+    background-color: #2e81f4;
+    height: 150px;
+    overflow: hidden;
+}
+.login__header > .facebook__logo > img {
+    height: 120px;
+    margin-right: 100px;
+}
+.login__header > .register__button > button {
+    border: none;
+    outline-width: 0;
+    color: white;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    border-radius: 10px;
+    background-color: #4bb543;
+}
+.login__header > .register__button > button:hover {
+    background-color: #43a23c;
+    cursor: pointer;
+}
