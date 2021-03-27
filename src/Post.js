@@ -42,18 +42,6 @@ function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }
             })
     }, [postId, userId]);
 
-    // const commentShow = () => {
-    //     var element = document.getElementById('1');
-    //     var element2 = document.getElementById('2');
-    //     if (element.style.display === "none") {
-    //         element.style.display = "flex";
-    //         element2.style.display = "block";
-    //     } else {
-    //         element.style.display = "none";
-    //         element2.style.display = "none";
-    //     }
-    // }
-
     const likeHandle = (event) => {
         event.preventDefault();
         if (show == 'like2') {
@@ -69,7 +57,6 @@ function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }
             .get()
             .then(docc => {
                 const data = docc.data()
-                console.log(show)
                 if (show == 'like2') {
                     db.collection("posts")
                         .doc(postId)
@@ -100,10 +87,8 @@ function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }
 
     }
 
-
     const postComment = (event) => {
         event.preventDefault();
-
         db.collection("posts").doc(postId).collection("comments").add({
             text: comment,
             username: origuser,
@@ -121,21 +106,15 @@ function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }
                     src=""
                 />
                 <h3>{username}</h3>
-                <i class="post__verified" />
             </div>
-
             <h4 className="post__text">{caption}</h4>
-
             <img src={imageUrl} className="post__image" />
-
             <div className="post__likeandlove">
                 <i className="post__like" />
                 <i className="post__heart" />
                 <p>{noLikes} Likes</p>
             </div>
-
             <hr />
-
             <div className="post__likeoptions">
                 <div className="like" onClick={likeHandle}>
                     <i className={show} />
@@ -160,9 +139,7 @@ function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }
                     <input className="commentInputBox" type="text" placeholder="Write a comment ... " onChange={(e) => setComment(e.target.value)} />
                     <input type="submit" disabled={!comment} className="transparent__submit" />
                 </div>
-                <p className="pressEnterToPost">Press Enter to post</p>
             </form>
-
             {
                 comments.map((comment) => (
                     <div className={`comments__show myself`}>

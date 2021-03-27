@@ -42,7 +42,6 @@ function App() {
                 <Posts user={user} />
               </div>
               <Sidebar2 />
-
             </div>
           </Route>
         </Switch>

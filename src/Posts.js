@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ImageUpload from './ImageUpload';
 import './Posts.css';
-import firebase from 'firebase';
 import { db } from './firebase';
 import Post from './Post.js';
 import { useHistory } from 'react-router-dom';
@@ -28,7 +27,6 @@ function Posts({ user }) {
     return (
         <div className="posts">
             <ImageUpload username={user?.displayName} />
-
             {
                 posts.map(({ id, post }) => (
                     <Post key={id} postId={id} origuser={user?.displayName} username={post.username} userId={user.uid} caption={post.caption} imageUrl={post.imageUrl} noLikes={post.noLikes} />
