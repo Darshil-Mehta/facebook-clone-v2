@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
-import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginHeader from './LoginHeader.js';
 import Login from './Login';
 import RegisterHeader from './RegisterHeader.js';
 import Register from './Register.js';
+import './App.css';
 import { auth } from './firebase.js';
 import HomeHeader from './HomeHeader.js';
-
+import Sidebar from './Sidebar.js';
+import Sidebar2 from './Sidebar2.js';
+import Posts from './Posts.js';
 
 function App() {
 
@@ -34,6 +36,14 @@ function App() {
           </Route>
           <Route path="/">
             <HomeHeader user={user} />
+            <div className="app__page">
+              <Sidebar user={user} />
+              <div className="app__posts">
+                <Posts user={user} />
+              </div>
+              <Sidebar2 />
+
+            </div>
           </Route>
         </Switch>
       </Router>

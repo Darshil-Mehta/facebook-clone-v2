@@ -12,9 +12,11 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 function HomeHeader({ user }) {
     const history = useHistory('');
+
     if (user === false) {
         history.push("/login")
     }
+
     const logout = (event) => {
         event.preventDefault();
         auth.signOut();
@@ -24,7 +26,7 @@ function HomeHeader({ user }) {
         <div className="homeHeader">
             <div className="homeHeader__left">
                 <Link to="/">
-                    <img src="https://i.ibb.co/WzybLQK/del.png" alt="Facebook Logo" className="homeHeader__logo" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/newagent-e757a.appspot.com/o/facebooklogo.png?alt=media&token=2c0922ba-df0a-4feb-9364-2fe3764fd772" alt="Facebook Logo" className="homeHeader__logo" />
                 </Link>
             </div>
 

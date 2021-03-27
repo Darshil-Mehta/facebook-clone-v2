@@ -1,0 +1,44 @@
+.sidebar2 {
+    flex: 1;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.sidebar2__languages {
+    background-color: white;
+    border: 1px solif rgba(199, 199, 199, 0.63);
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 80px;
+}
+
+.sidebar2__languages p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #4765a0;
+}
+
+.sidebar2__languages p:hover {
+    cursor: pointer;
+}
+
+.sidebar2__selected {
+    color: gray !important;
+}
+
+.sidebar2__policies {
+    color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.copyright {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}

@@ -8,21 +8,24 @@ function Login() {
     const [email, setEmail] = useState('');
     const history = useHistory('');
     const [password, setPassword] = useState('');
-    console.log(auth.user);
+
     const login = (event) => {
         event.preventDefault();
+
         auth.signInWithEmailAndPassword(email, password)
             .then((auth) => {
-                console.log(auth.user.displayName)
+                console.log(auth)
                 history.push("/");
             })
             .catch((e) => {
                 if (
-                    e.message === "The password is invalid or the user does not have a password."
+                    e.message ===
+                    "The password is invalid or the user does not have a password."
                 ) {
                     alert("Please check your credentials again");
                 } else if (
-                    e.message === "There is no user record corresponding to this identifier. The user may have been deleted."
+                    e.message ===
+                    "There is no user record corresponding to this identifier. The user may have been deleted."
                 ) {
                     history.push("/register");
                     window.scrollTo({
@@ -48,7 +51,7 @@ function Login() {
                         <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
                     </center>
                     <center>
-                        <button onClick={login} className="login__login">Log In</button>
+                        <button type="submit" onClick={login} className="login__login">Log In</button>
                     </center>
                     <center>
                         <h6>Forgotten Password</h6>
