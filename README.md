@@ -1,3 +1,5 @@
+Deplyed using firebase at -> https://facebook-clone-v2-87118.web.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
