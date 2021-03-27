@@ -7,8 +7,8 @@ import Register from './Register.js';
 import './App.css';
 import { auth } from './firebase.js';
 import HomeHeader from './HomeHeader.js';
-import Sidebar from './Sidebar.js';
-import Sidebar2 from './Sidebar2.js';
+import SideBarLeft from "./SideBarLeft"
+import SideBarRight from "./SideBarRight"
 import Posts from './Posts.js';
 
 function App() {
@@ -37,11 +37,11 @@ function App() {
           <Route path="/">
             <HomeHeader user={user} />
             <div className="app__page">
-              <Sidebar user={user} />
+              <SideBarLeft user={user} />
               <div className="app__posts">
                 <Posts user={user} />
               </div>
-              <Sidebar2 />
+              <SideBarRight />
             </div>
           </Route>
         </Switch>

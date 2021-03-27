@@ -3,6 +3,7 @@ import './Post.css';
 import { Avatar } from '@material-ui/core';
 import { storage, db } from './firebase';
 import firebase from "firebase";
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }) {
 
@@ -97,6 +98,14 @@ function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }
         setComment('');
     }
 
+    const toggleComments = (e) => {
+        e.preventDefault();
+        console.log("1");
+        const comments = document.getElementById('comments')
+        comments.classList.toggle('hide__comments')
+        console.log("2");
+    }
+
     return (
         <div className="post">
             <div className="post__header">
@@ -110,9 +119,11 @@ function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }
             <h4 className="post__text">{caption}</h4>
             <img src={imageUrl} className="post__image" />
             <div className="post__likeandlove">
-                <i className="post__like" />
-                <i className="post__heart" />
-                <p>{noLikes} Likes</p>
+                <p>{noLikes}</p>
+                <ThumbUpIcon 
+                    fontSize="small" 
+                    style={{color: "#2e81f4"}}
+                />
             </div>
             <hr />
             <div className="post__likeoptions">
@@ -120,9 +131,9 @@ function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }
                     <i className={show} />
                     <h3 className={show2}>Like</h3>
                 </div>
-                <div className="comment">
+                <div className="comment" onClick={toggleComments}>
                     <i className="comment2" />
-                    <h3 class="dope">Comment</h3>
+                    <h3 class="dope">Comments</h3>
                 </div>
                 <div className="share">
                     <i className="share2" />
@@ -140,6 +151,7 @@ function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }
                     <input type="submit" disabled={!comment} className="transparent__submit" />
                 </div>
             </form>
+            <div id="comments">
             {
                 comments.map((comment) => (
                     <div className={`comments__show myself`}>
@@ -154,6 +166,7 @@ function Post({ postId, origuser, username, userId, caption, imageUrl, noLikes }
                     </div>
                 ))
             }
+            </div>
         </div>
     )
 }

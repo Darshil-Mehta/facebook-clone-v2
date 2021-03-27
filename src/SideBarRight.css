@@ -1,0 +1,14 @@
+.sidebarRight {
+    padding: 20px 10px;
+    flex: 0.33;
+}
+
+.sidebarRight > h4 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.sidebarRight > .sidebarRight__info {
+    display: flex;
+    justify-content: space-between;
+}

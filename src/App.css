@@ -3,7 +3,8 @@ body {
 }
 
 .app__page {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
 .app__posts {

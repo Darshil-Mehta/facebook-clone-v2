@@ -1,15 +1,17 @@
 import React from 'react'
-import './SidebarRow.css';
 
-function SidebarRow({ selected, ImageLink, title, avatar }) {
+import "./SideBarRow.css"
+
+import { Avatar } from '@material-ui/core'
+
+function SideBarRow({ src, Icon, title }) {
     return (
-        <div className={`sidebarRow ${selected && "selected"} ${avatar && "avatar"}`}>
-            <div className='colorwrap'>
-                <img src={ImageLink} alt="" className={`sidebarRow__icon ${avatar && "avatar"}`} />
-                <h2 className={`sidebarRow__title ${avatar && "avatar"}`}>{title}</h2>
-            </div>
-        </div >
+        <div className="sideBarRow">
+            {src && <Avatar src={src} />}
+            {Icon && <Icon />}
+            <h4>{title}</h4>
+        </div>
     )
 }
 
-export default SidebarRow
+export default SideBarRow
