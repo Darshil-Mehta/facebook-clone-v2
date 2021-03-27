@@ -1,25 +1,34 @@
-.login__header {
+.header {
     display: flex;
     align-items: center;
-    background-color: #2e81f4;
-    height: 150px;
-    overflow: hidden;
+    background-color: #3f5d9a;
+    height: 83px;
+    overflow:hidden;
 }
-.login__header > .facebook__logo > img {
-    height: 120px;
-    margin-right: 100px;
+
+.header__logo {
+    height: 78px;
+    object-fit: contain;
+    margin-top: 10px;
+    margin-left: 70px;
 }
-.login__header > .register__button > button {
+
+.header__button {
+    width: 138px;
+    height: 30px;
+    color :#fff;
+    font-weight: 500;
+    padding-top: 7px;
+    border-radius: 2px;
+    background-color: #42b72a;
     border: none;
-    outline-width: 0;
-    color: white;
-    height: 40px;
-    font-size: 20px;
-    line-height: 40px;
-    border-radius: 10px;
-    background-color: #4bb543;
+    position: relative;
+    float: left;
+    display: flex;
+    margin-right: 770px;
 }
-.login__header > .register__button > button:hover {
-    background-color: #43a23c;
-    cursor: pointer;
+
+.header__button:hover {
+    background-color: #32971e;
+    transition: 0.2s;
 }
